@@ -1,0 +1,11 @@
+﻿using System;
+
+namespace TranslationsBlog.Models
+{
+    public class Part
+    {
+        public int Id { get; set; }
+        public int Number { get; set; }
+        public string Text { get; set; }
+    }
+}

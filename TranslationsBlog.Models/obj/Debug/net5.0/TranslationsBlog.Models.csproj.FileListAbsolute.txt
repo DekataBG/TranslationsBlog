@@ -1,0 +1,12 @@
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\bin\Debug\net5.0\TranslationsBlog.Models.deps.json
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\bin\Debug\net5.0\TranslationsBlog.Models.dll
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\bin\Debug\net5.0\ref\TranslationsBlog.Models.dll
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\bin\Debug\net5.0\TranslationsBlog.Models.pdb
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\obj\Debug\net5.0\TranslationsBlog.Models.csproj.AssemblyReference.cache
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\obj\Debug\net5.0\TranslationsBlog.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\obj\Debug\net5.0\TranslationsBlog.Models.AssemblyInfoInputs.cache
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\obj\Debug\net5.0\TranslationsBlog.Models.AssemblyInfo.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\obj\Debug\net5.0\TranslationsBlog.Models.csproj.CoreCompileInputs.cache
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\obj\Debug\net5.0\TranslationsBlog.Models.dll
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\obj\Debug\net5.0\ref\TranslationsBlog.Models.dll
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Models\obj\Debug\net5.0\TranslationsBlog.Models.pdb

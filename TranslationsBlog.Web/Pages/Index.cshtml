@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to 4241 Translations</h1>
+</div>
+<p style="font-size: 20px;">
+    On this website you will find English translations of
+    light novels that we like. If you have any suggestions or
+    comments, please let us know.
+</p>
+<hr class="solid" />
+<div class="container mt-5">
+    <h4>
+        You can find all the Light Novels we are translating at <a asp-page="/Menu/Translations">Translations</a>
+    </h4>
+    <br />
+    <h4>
+        You can learn about us at <a asp-page="/Menu/AboutUs">About Us</a>
+    </h4>
+    <br />
+    <h4>
+        If you have any suggestions, questions, want to support us or just want to talk with us,
+        you can message us on our e-mails.
+    </h4>
+</div>
+<hr />
+<br />
+<br />
+<div class="container mt-5">
+    <h2 class="text-center">The last translation</h2>
+    <p class="text-center">@Model.Parts[Model.Parts.Count -1].Text</p>
+
+</div>

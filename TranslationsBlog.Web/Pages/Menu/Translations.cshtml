@@ -1,0 +1,21 @@
+﻿@page
+@model TranslationsPage.Pages.TranslationsModel
+@{
+    ViewData["Title"] = "Light Novels";
+}
+
+<div class="container mb-5">
+    <a asp-page="/Create/CreateLightNovel" class="btn btn-success">Create Light Novel</a>
+</div>
+
+<div class="container">
+    <h2>Light Novels</h2>
+    <ul>
+        @foreach (var ln in Model.LightNovels)
+        {
+            <li>
+                <a asp-page="/LightNovel" asp-route-id="@ln.Id">@ln.Title</a>
+            </li>
+        }
+    </ul>
+</div>
