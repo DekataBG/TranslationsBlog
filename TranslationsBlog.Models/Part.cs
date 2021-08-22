@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace TranslationsBlog.Models
 {
@@ -6,6 +7,8 @@ namespace TranslationsBlog.Models
     {
         public int Id { get; set; }
         public int Number { get; set; }
+
+        [Required]
         public string Text { get; set; }
     }
 }

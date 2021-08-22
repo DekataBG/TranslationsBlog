@@ -11,5 +11,7 @@ namespace TranslationsBlog.Data
     {
         List<Part> ReturnAllParts();
         List<LightNovel> ReturnAllLightNovels();
+        void CreateLightNovel(LightNovel lightNovel);
+        void DeleteLightNovel(int id);
     }
 }
