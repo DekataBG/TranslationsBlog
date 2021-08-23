@@ -1,0 +1,17 @@
+﻿@page
+@model TranslationsBlog.Web.Pages.StaffModel
+@{
+    ViewData["Title"] = "Staff";
+}
+
+<div class="container">
+    <div class="m-3">
+        <b>Username:</b> @Model.Staff.Username
+    </div>
+    <div class="m-3">
+        <b>Email:</b> @Model.Staff.Email
+    </div>
+    <div class="m-3">
+        <b>Description:</b> @Model.Staff.Description
+    </div>
+</div>

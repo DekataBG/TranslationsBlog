@@ -14,7 +14,7 @@ namespace TranslationsBlog.Web.Pages.Create
         private readonly IRepository repository;
 
         [BindProperty]
-        public LightNovel LightNovel { get; set; }
+        public Models.LightNovel LightNovel { get; set; }
         public int Count { get; set; }
         public CreateLightNovelModel(IRepository repository)
         {

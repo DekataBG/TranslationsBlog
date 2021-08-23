@@ -4,9 +4,9 @@
     ViewData["Title"] = "About us";
 }
 
-<h1 class="text-center">About us</h1>
+<h1 class="text-center">About Us</h1>
 
-<div class="container">
+<div class="container m-3">
     <a class="btn btn-success" asp-page="/Create/CreateTranslator">Create Translator</a>
     <a class="btn btn-danger" asp-page="/Delete/DeleteTranslator">Delete Translator</a>
     <a class="btn btn-success" asp-page="/Create/CreateEditor">Create Editor</a>
@@ -30,7 +30,9 @@
     <ul>
         @foreach (var translator in Model.Translators)
         {
-            <li>@translator.Username</li>
+            <li>
+                <a asp-page="/Staff" asp-route-id="@translator.Id">@translator.Username</a>
+            </li>
         }
     </ul>
 </div>
@@ -39,7 +41,9 @@
     <ul>
         @foreach (var editor in Model.Editors)
         {
-            <li>@editor.Username</li>
+            <li>
+                <a asp-page="/Staff" asp-route-id="@editor.Id">@editor.Username</a>
+            </li>
         }
     </ul>
 </div>

@@ -83,3 +83,5 @@ C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\InvalidTranslator.cshtml.g.cs
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Create\CreateEditor.cshtml.g.cs
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\DeleteEditor.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Staff.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\LightNovel\LightNovel.cshtml.g.cs

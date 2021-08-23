@@ -19,8 +19,8 @@ namespace TranslationsBlog.Web.Pages.Delete
         }
 
         [BindProperty]
-        public LightNovel LightNovel { get; set; }
-        public List<LightNovel> LightNovels { get; set; }
+        public Models.LightNovel LightNovel { get; set; }
+        public List<Models.LightNovel> LightNovels { get; set; }
         public void OnGet()
         {
             LightNovels = repository.ReturnAllLightNovels();

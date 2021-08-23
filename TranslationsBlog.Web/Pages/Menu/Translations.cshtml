@@ -15,7 +15,7 @@
         @foreach (var ln in Model.LightNovels)
         {
             <li>
-                <a asp-page="/LightNovel" asp-route-id="@ln.Id">@ln.Title</a>
+                <a asp-page="/LightNovel/LightNovel" asp-route-id="@ln.Id">@ln.Title</a>
             </li>
         }
     </ul>
