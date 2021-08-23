@@ -7,9 +7,10 @@
 <h1 class="text-center">About us</h1>
 
 <div class="container">
-    <button class="btn btn-primary">
-
-    </button>
+    <a class="btn btn-success" asp-page="/Create/CreateTranslator">Create Translator</a>
+    <a class="btn btn-danger" asp-page="/Delete/DeleteTranslator">Delete Translator</a>
+    <a class="btn btn-success" asp-page="/Create/CreateEditor">Create Editor</a>
+    <a class="btn btn-danger" asp-page="/Delete/DeleteEditor">Delete Editor</a>
 </div>
 
 <div class="container">
@@ -20,7 +21,25 @@
         without our permission. 
     </p>
     <p>
-        If youhave any questions, want to suggest a light novel or to become part of our staff, 
+        If you have any questions, want to suggest a light novel or to become part of our staff, 
         please contact us at <i>4241translations@mail.bg</i>
     </p>
+</div>
+<div class="container m-5">
+    <h3>Translators</h3>
+    <ul>
+        @foreach (var translator in Model.Translators)
+        {
+            <li>@translator.Username</li>
+        }
+    </ul>
+</div>
+<div class="container m-5">
+    <h3>Editors</h3>
+    <ul>
+        @foreach (var editor in Model.Editors)
+        {
+            <li>@editor.Username</li>
+        }
+    </ul>
 </div>

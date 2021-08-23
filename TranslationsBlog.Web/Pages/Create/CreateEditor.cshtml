@@ -1,0 +1,24 @@
+﻿@page
+@model TranslationsBlog.Web.Pages.Create.CreateEditorModel
+@{
+    ViewData["Title"] = "Create Editor";
+}
+
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            <input asp-for="Editor.Username" placeholder="Username" />
+            <span asp-validation-for="Editor.Username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input asp-for="Editor.Email" placeholder="Email" />
+        </div>
+        <div class="form-group">
+            <textarea rows="10" cols="50" asp-for="Editor.Description" placeholder="Description"></textarea>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Create Editor</button>
+            <a href='javascript:history.go(-1)' class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

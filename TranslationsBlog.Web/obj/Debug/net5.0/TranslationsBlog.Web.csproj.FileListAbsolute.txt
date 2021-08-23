@@ -78,3 +78,8 @@ C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\bin\Debug\net5
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Create\CreateLightNovel.cshtml.g.cs
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\DeleteLightNovel.cshtml.g.cs
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\InvalidLightNovel.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Create\CreateTranslator.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\DeleteTranslator.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\InvalidTranslator.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Create\CreateEditor.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\DeleteEditor.cshtml.g.cs

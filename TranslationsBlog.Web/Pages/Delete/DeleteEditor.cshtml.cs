@@ -7,22 +7,33 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using TranslationsBlog.Data;
 using TranslationsBlog.Models;
 
-namespace TranslationsPage.Pages.Menu
+namespace TranslationsBlog.Web.Pages.Delete
 {
-    public class AboutUsModel : PageModel
+    public class DeleteEditorModel : PageModel
     {
         private readonly IRepository repository;
 
-        public AboutUsModel(IRepository repository)
+        public DeleteEditorModel(IRepository repository)
         {
             this.repository = repository;
         }
-        public List<Translator> Translators { get; set; }
+        [BindProperty]
+        public Editor Editor { get; set; }
         public List<Editor> Editors { get; set; }
         public void OnGet()
         {
-            Translators = repository.ReturnAllTranslators();
             Editors = repository.ReturnAllEditors();
+        }
+        public IActionResult OnPost()
+        {
+            if (Editor.Id != 0)
+            {
+                repository.DeleteEditor(Editor.Id);
+
+                return RedirectToPage("/Menu/AboutUs");
+            }
+
+            return RedirectToPage("/Delete/InvalidTranslator");
         }
     }
 }

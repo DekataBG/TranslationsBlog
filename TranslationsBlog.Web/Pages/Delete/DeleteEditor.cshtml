@@ -1,0 +1,18 @@
+﻿@page
+@model TranslationsBlog.Web.Pages.Delete.DeleteEditorModel
+@{
+    ViewData["Title"] = "Delete Editor";
+}
+
+<form method="post">
+    <div class="form-group">
+        <select asp-for="@Model.Editor.Id"
+                asp-items="@(new SelectList(Model.Editors,"Id","Username"))">
+            <option>Select Translator</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Delete Editor</button>
+        <a href='javascript:history.go(-1)' class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
