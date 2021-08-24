@@ -10,7 +10,6 @@
 <div class="container">
     <form method="post">
         <input hidden asp-for="@Model.LightNovel.Number" value="@Model.Count" />
-        <input hidden asp-for="@Model.LightNovel.Volumes" />
         <div class="form-group">
             <input asp-for="@Model.LightNovel.Title" type="search" placeholder="Title" />
             <span asp-validation-for="@Model.LightNovel.Title" class="text-danger"></span>

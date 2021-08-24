@@ -31,6 +31,20 @@ namespace TranslationsBlog.Data
 
         public void CreateLightNovel(LightNovel lightNovel)
         {
+            var part = new Part();
+            part.Number = 1;
+            part.Text = "first part";
+            var chapter = new Chapter();
+            chapter.Number = 1;
+            chapter.Parts = new List<Part>();
+            chapter.Parts.Add(part);
+            var volume = new Volume();
+            volume.Number = 1;
+            volume.Chapters = new List<Chapter>();
+            volume.Chapters.Add(chapter);
+            lightNovel.Volumes = new List<Volume>();
+            lightNovel.Volumes.Add(volume);
+
             dbContext.LightNovels.Add(lightNovel);
             dbContext.SaveChanges();
         }
@@ -68,6 +82,16 @@ namespace TranslationsBlog.Data
         public List<Editor> ReturnAllEditors()
         {
             return dbContext.Editors.ToList();
+        }
+
+        public List<Chapter> ReturnAllChapters()
+        {
+            return dbContext.Chapters.ToList();
+        }
+
+        public List<Volume> ReturnAllVolumes()
+        {
+            return dbContext.Volumes.ToList();
         }
 
         public Repository()

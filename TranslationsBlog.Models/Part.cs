@@ -10,5 +10,7 @@ namespace TranslationsBlog.Models
 
         [Required]
         public string Text { get; set; }
+        public int  ChapterId { get; set; }
+        public Chapter Chapter { get; set; }
     }
 }

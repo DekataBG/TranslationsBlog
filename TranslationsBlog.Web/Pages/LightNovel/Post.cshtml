@@ -1,0 +1,16 @@
+﻿@page "{lnId}/{volId}/{chId}/{pId}"
+@model TranslationsBlog.Web.Pages.LightNovel.PostModel
+@{
+    ViewData["Title"] = "Post";
+}
+
+<div class="container mb-5">
+    <a asp-page="Edit" class="btn btn-secondary" asp-route-id="@Model.Part.Id">Edit</a>
+    <a asp-page="Delete" class="btn btn-danger">Delete</a>
+</div>
+
+<h3 class="text-center">@Model.LightNovel.Title Volume @Model.Volume.Number Chapter @Model.Chapter.Number Part @Model.Part.Number</h3>
+
+<div class="container text-center">
+    @Model.Part.Text
+</div>

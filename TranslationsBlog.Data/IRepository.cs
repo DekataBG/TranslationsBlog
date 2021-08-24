@@ -10,6 +10,8 @@ namespace TranslationsBlog.Data
     public interface IRepository
     {
         List<Part> ReturnAllParts();
+        List<Chapter> ReturnAllChapters();
+        List<Volume> ReturnAllVolumes();
         List<LightNovel> ReturnAllLightNovels();
         List<Translator> ReturnAllTranslators();
         List<Editor> ReturnAllEditors();

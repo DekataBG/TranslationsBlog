@@ -32,6 +32,12 @@
 <br />
 <div class="container mt-5">
     <h2 class="text-center">The last translation</h2>
-    <p class="text-center">@Model.Parts[Model.Parts.Count -1].Text</p>
+    @{ 
+        if(Model.Parts.Count > 0)
+            {
+                <p class="text-center">@Model.Parts[Model.Parts.Count - 1].Text</p>
+            }
+    }
+    
 
 </div>
