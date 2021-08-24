@@ -18,11 +18,15 @@ namespace TranslationsBlog.Web.Pages
             this.repository = repository;
         }
         public Person Staff { get; set; }
-        public void OnGet(int id)
+        public IActionResult OnGet(int id)
         {
             Staff = repository.ReturnAllTranslators().FirstOrDefault(e => e.Id == id);
             if (Staff == null)
                 Staff = repository.ReturnAllEditors().FirstOrDefault(e => e.Id == id);
+            if (Staff == null)
+                return RedirectToPage("/NotFound/StaffNotFound");
+            return Page();
+
         }
     }
 }

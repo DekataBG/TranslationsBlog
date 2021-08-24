@@ -21,9 +21,12 @@ namespace TranslationsBlog.Web.Pages.LightNovel
         //public List<Volume> Volumes { get; set; } = new List<Volume>();
         public List<Chapter> Chapters { get; set; } = new List<Chapter>();
         public List<Part> Parts { get; set; } = new List<Part>();
-        public void OnGet(int id)
+        public IActionResult OnGet(int id)
         {
             LightNovel = repository.ReturnAllLightNovels().FirstOrDefault(e => e.Id == id);
+            if (LightNovel == null)
+                return RedirectToPage("/NotFound/TranslationNotFound");
+
             LightNovel.Volumes = repository.ReturnAllVolumes().Where(volume => volume.LightNovelId == LightNovel.Id).ToList();
 
             foreach (var volume in LightNovel.Volumes)
@@ -38,6 +41,8 @@ namespace TranslationsBlog.Web.Pages.LightNovel
                     chapter.Parts = repository.ReturnAllParts().Where(part => part.ChapterId == chapter.Id).ToList();
                 }
             }
+
+            return Page();
         }
     }
 }

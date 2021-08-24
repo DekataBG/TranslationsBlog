@@ -41,16 +41,16 @@ namespace TranslationsBlog.Web.Pages.LightNovel
             }
 
             if (LightNovel == null)
-                return RedirectToPage("/TranslationNotFound");
+                return RedirectToPage("/NotFound/TranslationNotFound");
             Volume = LightNovel.Volumes.FirstOrDefault(e => e.Id == volId);
             if (Volume == null)
-                return RedirectToPage("/TranslationNotFound");
+                return RedirectToPage("/NotFound/TranslationNotFound");
             Chapter = Volume.Chapters.FirstOrDefault(e => e.Id == chId);
             if (Chapter == null)
-                return RedirectToPage("/TranslationNotFound");
+                return RedirectToPage("/NotFound/TranslationNotFound");
             Part = Chapter.Parts.FirstOrDefault(e => e.Id == pId);
             if (Part == null)
-                return RedirectToPage("/TranslationNotFound");
+                return RedirectToPage("/NotFound/TranslationNotFound");
 
             return Page();
         }

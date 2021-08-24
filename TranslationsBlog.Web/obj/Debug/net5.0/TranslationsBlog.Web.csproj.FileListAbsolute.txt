@@ -86,4 +86,5 @@ C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Staff.cshtml.g.cs
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\LightNovel\LightNovel.cshtml.g.cs
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\LightNovel\Post.cshtml.g.cs
-C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\TranslationNotFound.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\NotFound\StaffNotFound.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\NotFound\TranslationNotFound.cshtml.g.cs
