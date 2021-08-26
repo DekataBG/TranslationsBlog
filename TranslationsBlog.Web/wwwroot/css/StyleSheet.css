@@ -1,0 +1,13 @@
+﻿html {
+    font-size: 28px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 30px;
+    }
+}
+
+.btn{
+    width: 300px;
+}

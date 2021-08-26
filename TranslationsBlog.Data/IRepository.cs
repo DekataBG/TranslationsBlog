@@ -21,5 +21,7 @@ namespace TranslationsBlog.Data
         void DeleteTranslator(int id);
         void CreateEditor(Editor editor);
         void DeleteEditor(int id);
+        void DeletePart(int id);
+        void DbContextSaveChanges();
     }
 }

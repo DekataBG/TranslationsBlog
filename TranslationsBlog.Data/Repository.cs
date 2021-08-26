@@ -79,6 +79,12 @@ namespace TranslationsBlog.Data
             dbContext.SaveChanges();
         }
 
+        public void DeletePart(int id)
+        {
+            dbContext.Parts.Remove(dbContext.Parts.FirstOrDefault(e => e.Id == id));
+            dbContext.SaveChanges();
+        }
+
         public List<Editor> ReturnAllEditors()
         {
             return dbContext.Editors.ToList();
@@ -92,6 +98,11 @@ namespace TranslationsBlog.Data
         public List<Volume> ReturnAllVolumes()
         {
             return dbContext.Volumes.ToList();
+        }
+
+        public void DbContextSaveChanges()
+        {
+            dbContext.SaveChanges();
         }
 
         public Repository()

@@ -1,0 +1,21 @@
+﻿@page
+@model TranslationsBlog.Web.Pages.LightNovel.EditPartModel
+@{
+    ViewData["Title"] = "Edit part";
+}
+
+<h1 class="text-center">Edit Part</h1>
+<div class="container m-5">
+    <form method="post">
+        <input hidden asp-for="Part.Id" />
+        <input hidden asp-for="Part.Number" />
+        <textarea cols="80" rows="15" asp-for="Part.Text">
+            @Model.Part.Text
+        </textarea>
+        <span asp-validation-for="Part.Text" class="text-danger"></span>
+        <div class="container mt-5">
+            <button class="btn btn-primary" type="submit">Update</button>
+            <a href='javascript:history.go(-1)' class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
