@@ -1,0 +1,19 @@
+﻿@page
+@model TranslationsBlog.Web.Pages.Delete.DeleteVolumeModel
+@{
+    ViewData["Title"] = "Delete Volume";
+}
+
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            <select asp-for="@Model.Volume.Id" asp-items="@(new SelectList(Model.Volumes, "Id", "Number"))">
+                <option value="">Please select volume</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Delete Volume</button>
+            <a href='javascript:history.go(-1)' class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

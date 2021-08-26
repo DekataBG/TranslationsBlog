@@ -17,6 +17,8 @@ namespace TranslationsBlog.Data
         List<Editor> ReturnAllEditors();
         void CreateLightNovel(LightNovel lightNovel);
         void DeleteLightNovel(int id);
+        void CreateVolume(Volume volume, LightNovel lightNovel);
+        void DeleteVolume(int id);
         void CreateTranslator(Translator translator);
         void DeleteTranslator(int id);
         void CreateEditor(Editor editor);

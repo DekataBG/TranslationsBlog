@@ -18,9 +18,6 @@ namespace TranslationsBlog.Web.Pages.LightNovel
             this.repository = repository;
         }
         public Models.LightNovel LightNovel { get; private set; }
-        //public List<Volume> Volumes { get; set; } = new List<Volume>();
-        public List<Chapter> Chapters { get; set; } = new List<Chapter>();
-        public List<Part> Parts { get; set; } = new List<Part>();
         public IActionResult OnGet(int id)
         {
             LightNovel = repository.ReturnAllLightNovels().FirstOrDefault(e => e.Id == id);

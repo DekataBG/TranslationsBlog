@@ -15,6 +15,7 @@ namespace TranslationsBlog.Data
         {
             this.dbContext = dbContext;
         }
+
         public List<Part> ReturnAllParts()
         {
             return dbContext.Parts.ToList();
@@ -24,6 +25,7 @@ namespace TranslationsBlog.Data
         {
             return dbContext.LightNovels.ToList();
         }
+
         public List<Translator> ReturnAllTranslators()
         {
             return dbContext.Translators.ToList();
@@ -52,6 +54,25 @@ namespace TranslationsBlog.Data
         public void DeleteLightNovel(int id)
         {
             dbContext.LightNovels.Remove(dbContext.LightNovels.FirstOrDefault(e => e.Id == id));
+            dbContext.SaveChanges();
+        }
+
+        public void CreateVolume(Volume volume, LightNovel lightNovel)
+        {
+            lightNovel.Volumes = ReturnAllVolumes().Where(e => e.LightNovelId == lightNovel.Id).ToList();
+
+            volume.Number = lightNovel.Volumes.Count + 1;
+            volume.LightNovel = lightNovel;
+            volume.LightNovelId = lightNovel.Id;
+            volume.Chapters = new List<Chapter>();
+
+            lightNovel.Volumes.Add(volume);
+            dbContext.SaveChanges();
+        }
+
+        public void DeleteVolume(int id)
+        {
+            dbContext.Volumes.Remove(ReturnAllVolumes().FirstOrDefault(e => e.Id == id));
             dbContext.SaveChanges();
         }
 
