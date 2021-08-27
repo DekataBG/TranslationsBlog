@@ -21,9 +21,8 @@ namespace TranslationsBlog.Web.Pages.Create
         public IActionResult OnGet(int id)
         {
             LightNovel = repository.ReturnAllLightNovels().FirstOrDefault(e => e.Id == id);
-            Volume volume = new Volume();
 
-            repository.CreateVolume(volume, LightNovel);
+            repository.CreateVolume(new Volume(), LightNovel);
 
             return RedirectToPage("/Menu/Translations");
         }

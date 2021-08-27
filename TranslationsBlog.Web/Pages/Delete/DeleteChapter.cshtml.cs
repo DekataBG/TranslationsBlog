@@ -9,28 +9,32 @@ using TranslationsBlog.Models;
 
 namespace TranslationsBlog.Web.Pages.Delete
 {
-    public class DeleteEditorModel : PageModel
+    public class DeleteChapterModel : PageModel
     {
         private readonly IRepository repository;
 
-        public DeleteEditorModel(IRepository repository)
+        public DeleteChapterModel(IRepository repository)
         {
             this.repository = repository;
         }
+
         [BindProperty]
-        public Editor Editor { get; set; }
-        public List<Editor> Editors { get; set; }
+        public Chapter Chapter { get; set; }
+        public List<Chapter> Chapters { get; set; }
+        public List<Volume> Volumes { get; set; }
         public void OnGet()
         {
-            Editors = repository.ReturnAllEditors();
+            Chapters = repository.ReturnAllChapters();
+            Volumes = repository.ReturnAllVolumes();
         }
+
         public IActionResult OnPost()
         {
-            if (Editor.Id != 0)
+            if(Chapter.Id != 0)
             {
-                repository.DeleteEditor(Editor.Id);
+                repository.DeleteChapter(Chapter.Id);
 
-                return RedirectToPage("/Menu/AboutUs");
+                return RedirectToPage("/Menu/Translations");
             }
 
             return RedirectToPage("/Delete/InvalidOptionDropdown");

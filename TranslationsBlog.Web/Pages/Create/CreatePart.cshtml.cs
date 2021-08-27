@@ -7,30 +7,32 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using TranslationsBlog.Data;
 using TranslationsBlog.Models;
 
-namespace TranslationsBlog.Web.Pages.Delete
+namespace TranslationsBlog.Web.Pages.Create
 {
-    public class DeleteLightNovelModel : PageModel
+    public class CreatePartModel : PageModel
     {
         private readonly IRepository repository;
 
-        public DeleteLightNovelModel(IRepository repository)
+        public CreatePartModel(IRepository repository)
         {
             this.repository = repository;
         }
 
         [BindProperty]
-        public Models.LightNovel LightNovel { get; set; }
-        public List<Models.LightNovel> LightNovels { get; set; }
+        public Chapter Chapter { get; set; }
+        public List<Chapter> Chapters { get; set; }
+        public List<Volume> Volumes { get; set; }
         public void OnGet()
         {
-            LightNovels = repository.ReturnAllLightNovels();
+            Chapters = repository.ReturnAllChapters();
+            Volumes = repository.ReturnAllVolumes();
         }
-
         public IActionResult OnPost()
         {
-            if (LightNovel.Id != 0)
+            if (Chapter.Id != 0)
             {
-                repository.DeleteLightNovel(LightNovel.Id);
+                Chapter = repository.ReturnAllChapters().FirstOrDefault(e => e.Id == Chapter.Id);
+                repository.CreatePart(new Part(), Chapter);
 
                 return RedirectToPage("/Menu/Translations");
             }

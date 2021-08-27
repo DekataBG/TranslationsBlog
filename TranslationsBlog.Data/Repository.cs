@@ -10,25 +10,33 @@ namespace TranslationsBlog.Data
     public class Repository : IRepository
     {
         private readonly AppDbContext dbContext;
-
         public Repository(AppDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
-
-        public List<Part> ReturnAllParts()
-        {
-            return dbContext.Parts.ToList();
-        }
-
         public List<LightNovel> ReturnAllLightNovels()
         {
             return dbContext.LightNovels.ToList();
         }
-
+        public List<Volume> ReturnAllVolumes()
+        {
+            return dbContext.Volumes.ToList();
+        }
+        public List<Chapter> ReturnAllChapters()
+        {
+            return dbContext.Chapters.ToList();
+        }
+        public List<Part> ReturnAllParts()
+        {
+            return dbContext.Parts.ToList();
+        }
         public List<Translator> ReturnAllTranslators()
         {
             return dbContext.Translators.ToList();
+        }
+        public List<Editor> ReturnAllEditors()
+        {
+            return dbContext.Editors.ToList();
         }
 
         public void CreateLightNovel(LightNovel lightNovel)
@@ -50,13 +58,11 @@ namespace TranslationsBlog.Data
             dbContext.LightNovels.Add(lightNovel);
             dbContext.SaveChanges();
         }
-
         public void DeleteLightNovel(int id)
         {
             dbContext.LightNovels.Remove(dbContext.LightNovels.FirstOrDefault(e => e.Id == id));
             dbContext.SaveChanges();
         }
-
         public void CreateVolume(Volume volume, LightNovel lightNovel)
         {
             lightNovel.Volumes = ReturnAllVolumes().Where(e => e.LightNovelId == lightNovel.Id).ToList();
@@ -69,56 +75,64 @@ namespace TranslationsBlog.Data
             lightNovel.Volumes.Add(volume);
             dbContext.SaveChanges();
         }
-
         public void DeleteVolume(int id)
         {
             dbContext.Volumes.Remove(ReturnAllVolumes().FirstOrDefault(e => e.Id == id));
             dbContext.SaveChanges();
         }
-
-        public void CreateTranslator(Translator translator)
+        public void CreateChapter(Chapter chapter, Volume volume)
         {
-            dbContext.Translators.Add(translator);
+            volume.Chapters = ReturnAllChapters().Where(e => e.VolumeId == volume.Id).ToList();
+
+            chapter.Number = volume.Chapters.Count + 1;
+            chapter.Volume = volume;
+            chapter.VolumeId = volume.Id;
+            chapter.Parts = new List<Part>();
+
+            volume.Chapters.Add(chapter);
             dbContext.SaveChanges();
         }
-
-        public void DeleteTranslator(int id)
+        public void DeleteChapter(int id)
         {
-            dbContext.Translators.Remove(dbContext.Translators.FirstOrDefault(e => e.Id == id));
+            dbContext.Chapters.Remove(ReturnAllChapters().FirstOrDefault(e => e.Id == id));
             dbContext.SaveChanges();
         }
-
-        public void CreateEditor(Editor editor)
+        public void CreatePart(Part part, Chapter chapter)
         {
-            dbContext.Editors.Add(editor);
+            chapter.Parts = ReturnAllParts().Where(e => e.ChapterId == chapter.Id).ToList();
+
+            part.Text = "text";
+            part.Number = chapter.Parts.Count + 1;
+            part.Chapter = chapter;
+            part.ChapterId = chapter.Id;
+
+            chapter.Parts.Add(part);
             dbContext.SaveChanges();
         }
-
-        public void DeleteEditor(int id)
-        {
-            dbContext.Editors.Remove(dbContext.Editors.FirstOrDefault(e => e.Id == id));
-            dbContext.SaveChanges();
-        }
-
         public void DeletePart(int id)
         {
             dbContext.Parts.Remove(dbContext.Parts.FirstOrDefault(e => e.Id == id));
             dbContext.SaveChanges();
         }
-
-        public List<Editor> ReturnAllEditors()
+        public void CreateTranslator(Translator translator)
         {
-            return dbContext.Editors.ToList();
+            dbContext.Translators.Add(translator);
+            dbContext.SaveChanges();
         }
-
-        public List<Chapter> ReturnAllChapters()
+        public void DeleteTranslator(int id)
         {
-            return dbContext.Chapters.ToList();
+            dbContext.Translators.Remove(dbContext.Translators.FirstOrDefault(e => e.Id == id));
+            dbContext.SaveChanges();
         }
-
-        public List<Volume> ReturnAllVolumes()
+        public void CreateEditor(Editor editor)
         {
-            return dbContext.Volumes.ToList();
+            dbContext.Editors.Add(editor);
+            dbContext.SaveChanges();
+        }
+        public void DeleteEditor(int id)
+        {
+            dbContext.Editors.Remove(dbContext.Editors.FirstOrDefault(e => e.Id == id));
+            dbContext.SaveChanges();
         }
 
         public void DbContextSaveChanges()

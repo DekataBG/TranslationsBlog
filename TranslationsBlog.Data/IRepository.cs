@@ -19,11 +19,14 @@ namespace TranslationsBlog.Data
         void DeleteLightNovel(int id);
         void CreateVolume(Volume volume, LightNovel lightNovel);
         void DeleteVolume(int id);
+        void CreateChapter(Chapter chapter, Volume volume);
+        void DeleteChapter(int id);
+        void CreatePart(Part part, Chapter chapter);
+        void DeletePart(int id);
         void CreateTranslator(Translator translator);
         void DeleteTranslator(int id);
         void CreateEditor(Editor editor);
         void DeleteEditor(int id);
-        void DeletePart(int id);
         void DbContextSaveChanges();
     }
 }

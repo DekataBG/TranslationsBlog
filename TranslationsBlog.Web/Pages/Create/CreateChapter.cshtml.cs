@@ -7,33 +7,39 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using TranslationsBlog.Data;
 using TranslationsBlog.Models;
 
-namespace TranslationsBlog.Web.Pages.Delete
+namespace TranslationsBlog.Web.Pages.Create
 {
-    public class DeleteEditorModel : PageModel
+    public class CreateChapterModel : PageModel
     {
         private readonly IRepository repository;
 
-        public DeleteEditorModel(IRepository repository)
+        public CreateChapterModel(IRepository repository)
         {
             this.repository = repository;
         }
+
+        public List<Volume> Volumes { get; set; }
+
         [BindProperty]
-        public Editor Editor { get; set; }
-        public List<Editor> Editors { get; set; }
+        public Volume Volume { get; set; }
         public void OnGet()
         {
-            Editors = repository.ReturnAllEditors();
+            Volumes = repository.ReturnAllVolumes();
         }
+
         public IActionResult OnPost()
         {
-            if (Editor.Id != 0)
+            if (Volume.Id != 0)
             {
-                repository.DeleteEditor(Editor.Id);
+                Volume = repository.ReturnAllVolumes().FirstOrDefault(e => e.Id == Volume.Id);
 
-                return RedirectToPage("/Menu/AboutUs");
+                repository.CreateChapter(new Chapter(), Volume);
+
+                return RedirectToPage("/Menu/Translations");
             }
 
             return RedirectToPage("/Delete/InvalidOptionDropdown");
         }
+
     }
 }

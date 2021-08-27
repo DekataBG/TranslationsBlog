@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace TranslationsBlog.Web.Pages.Delete
 {
-    public class InvalidTranslatorModel : PageModel
+    public class InvalidOptionDropdownModel : PageModel
     {
         public void OnGet()
         {

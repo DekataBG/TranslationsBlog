@@ -1,0 +1,25 @@
+﻿@page
+@model TranslationsBlog.Web.Pages.Create.CreatePartModel
+@{
+    ViewData["Title"] = "Create Part";
+}
+
+<h3>Create Part</h3>
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            <select asp-for="@Model.Chapter.Id">
+                <option value="">Please select chapter</option>
+                @foreach (var chapter in Model.Chapters)
+                {
+                    var volNumber = Model.Volumes.FirstOrDefault(e => e.Id == chapter.VolumeId).Number;
+                    <option value="@chapter.Id">Volume @volNumber Chapter @chapter.Number</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Create Part</button>
+            <a href='javascript:history.go(-1)' class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

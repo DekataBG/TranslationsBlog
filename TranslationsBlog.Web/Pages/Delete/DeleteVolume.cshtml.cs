@@ -27,9 +27,14 @@ namespace TranslationsBlog.Web.Pages.Delete
         }
         public IActionResult OnPost()
         {
-            repository.DeleteVolume(Volume.Id);
+            if (Volume.Id != 0)
+            {
+                repository.DeleteVolume(Volume.Id);
 
-            return RedirectToPage("/Menu/Translations");
+                return RedirectToPage("/Menu/Translations");
+            }
+
+            return RedirectToPage("/Delete/InvalidOptionDropdown");
         }
     }
 }
