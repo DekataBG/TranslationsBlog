@@ -33,7 +33,7 @@ namespace TranslationsBlog.Web.Pages.Delete
                 return RedirectToPage("/Menu/AboutUs");
             }
 
-            return RedirectToPage("/Delete/InvalidOptionDropdown");
+            return RedirectToPage("/NotFound/InvalidOptionDropdown");
         }
     }
 }

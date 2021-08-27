@@ -90,7 +90,7 @@ C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\DeletePart.cshtml.g.cs
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Create\CreateVolume.cshtml.g.cs
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\DeleteVolume.cshtml.g.cs
-C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\InvalidOptionDropdown.cshtml.g.cs
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Create\CreateChapter.cshtml.g.cs
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\DeleteChapter.cshtml.g.cs
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Create\CreatePart.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\NotFound\InvalidOptionDropdown.cshtml.g.cs
