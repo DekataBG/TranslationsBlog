@@ -11,7 +11,7 @@ namespace TranslationsBlog.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Username is required!")]
         public string Username { get; set; }
         public string Email { get; set; }
         public string Description { get; set; }

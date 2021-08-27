@@ -8,9 +8,7 @@ namespace TranslationsBlog.Models
         public int Id { get; set; }
         public int Number { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Text is required!")]
         public string Text { get; set; }
-        public int  ChapterId { get; set; }
-        public Chapter Chapter { get; set; }
     }
 }

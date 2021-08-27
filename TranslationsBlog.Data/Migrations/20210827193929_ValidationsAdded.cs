@@ -2,7 +2,7 @@
 
 namespace TranslationsBlog.Data.Migrations
 {
-    public partial class FullyDefinedOneToManyRelationship : Migration
+    public partial class ValidationsAdded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -22,31 +22,25 @@ namespace TranslationsBlog.Data.Migrations
                 name: "LightNovelId",
                 table: "Volumes",
                 type: "int",
-                nullable: false,
-                defaultValue: 0,
+                nullable: true,
                 oldClrType: typeof(int),
-                oldType: "int",
-                oldNullable: true);
+                oldType: "int");
 
             migrationBuilder.AlterColumn<int>(
                 name: "ChapterId",
                 table: "Parts",
                 type: "int",
-                nullable: false,
-                defaultValue: 0,
+                nullable: true,
                 oldClrType: typeof(int),
-                oldType: "int",
-                oldNullable: true);
+                oldType: "int");
 
             migrationBuilder.AlterColumn<int>(
                 name: "VolumeId",
                 table: "Chapters",
                 type: "int",
-                nullable: false,
-                defaultValue: 0,
+                nullable: true,
                 oldClrType: typeof(int),
-                oldType: "int",
-                oldNullable: true);
+                oldType: "int");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Chapters_Volumes_VolumeId",
@@ -54,7 +48,7 @@ namespace TranslationsBlog.Data.Migrations
                 column: "VolumeId",
                 principalTable: "Volumes",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Parts_Chapters_ChapterId",
@@ -62,7 +56,7 @@ namespace TranslationsBlog.Data.Migrations
                 column: "ChapterId",
                 principalTable: "Chapters",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Volumes_LightNovels_LightNovelId",
@@ -70,7 +64,7 @@ namespace TranslationsBlog.Data.Migrations
                 column: "LightNovelId",
                 principalTable: "LightNovels",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -91,25 +85,31 @@ namespace TranslationsBlog.Data.Migrations
                 name: "LightNovelId",
                 table: "Volumes",
                 type: "int",
-                nullable: true,
+                nullable: false,
+                defaultValue: 0,
                 oldClrType: typeof(int),
-                oldType: "int");
+                oldType: "int",
+                oldNullable: true);
 
             migrationBuilder.AlterColumn<int>(
                 name: "ChapterId",
                 table: "Parts",
                 type: "int",
-                nullable: true,
+                nullable: false,
+                defaultValue: 0,
                 oldClrType: typeof(int),
-                oldType: "int");
+                oldType: "int",
+                oldNullable: true);
 
             migrationBuilder.AlterColumn<int>(
                 name: "VolumeId",
                 table: "Chapters",
                 type: "int",
-                nullable: true,
+                nullable: false,
+                defaultValue: 0,
                 oldClrType: typeof(int),
-                oldType: "int");
+                oldType: "int",
+                oldNullable: true);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Chapters_Volumes_VolumeId",
@@ -117,7 +117,7 @@ namespace TranslationsBlog.Data.Migrations
                 column: "VolumeId",
                 principalTable: "Volumes",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Parts_Chapters_ChapterId",
@@ -125,7 +125,7 @@ namespace TranslationsBlog.Data.Migrations
                 column: "ChapterId",
                 principalTable: "Chapters",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Volumes_LightNovels_LightNovelId",
@@ -133,7 +133,7 @@ namespace TranslationsBlog.Data.Migrations
                 column: "LightNovelId",
                 principalTable: "LightNovels",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+                onDelete: ReferentialAction.Cascade);
         }
     }
 }

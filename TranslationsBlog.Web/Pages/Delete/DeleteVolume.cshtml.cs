@@ -21,9 +21,9 @@ namespace TranslationsBlog.Web.Pages.Delete
 
         [BindProperty]
         public Volume Volume { get; set; }
-        public void OnGet()
-        {
-            Volumes = repository.ReturnAllVolumes();
+        public void OnGet(int id)
+        {            
+            Volumes = repository.ReturnAllLightNovels().FirstOrDefault(e => e.Id == id).Volumes;
         }
         public IActionResult OnPost()
         {

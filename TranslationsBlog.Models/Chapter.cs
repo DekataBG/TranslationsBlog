@@ -11,7 +11,5 @@ namespace TranslationsBlog.Models
         public int Id { get; set; }
         public int Number { get; set; }
         public List<Part> Parts { get; set; }
-        public int VolumeId { get; set; }
-        public Volume Volume { get; set; }
     }
 }

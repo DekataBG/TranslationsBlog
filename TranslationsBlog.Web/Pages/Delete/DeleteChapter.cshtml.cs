@@ -22,10 +22,18 @@ namespace TranslationsBlog.Web.Pages.Delete
         public Chapter Chapter { get; set; }
         public List<Chapter> Chapters { get; set; }
         public List<Volume> Volumes { get; set; }
-        public void OnGet()
+        public void OnGet(int id)
         {
-            Chapters = repository.ReturnAllChapters();
-            Volumes = repository.ReturnAllVolumes();
+            Chapters = new List<Chapter>();
+            Volumes = repository.ReturnAllLightNovels().FirstOrDefault(e => e.Id == id).Volumes;
+
+            foreach (var volume in Volumes)
+            {
+                foreach (var chapter in volume.Chapters)
+                {
+                    Chapters.Add(chapter);
+                }
+            }
         }
 
         public IActionResult OnPost()
@@ -38,6 +46,16 @@ namespace TranslationsBlog.Web.Pages.Delete
             }
 
             return RedirectToPage("/NotFound/InvalidOptionDropdown");
+        }
+
+        public int VolumeNumber(Chapter chapter)
+        {
+            foreach (var volume in Volumes)
+            {
+                if (volume.Chapters.Contains(chapter))
+                    return volume.Number;
+            }
+            return 0;
         }
     }
 }

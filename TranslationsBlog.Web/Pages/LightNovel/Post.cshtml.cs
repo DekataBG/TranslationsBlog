@@ -24,22 +24,7 @@ namespace TranslationsBlog.Web.Pages.LightNovel
         public IActionResult OnGet(int lnId, int volId, int chId, int pId)
         {
             LightNovel = repository.ReturnAllLightNovels().FirstOrDefault(e => e.Id == lnId);
-
-            LightNovel.Volumes = repository.ReturnAllVolumes().Where(volume => volume.LightNovelId == LightNovel.Id).ToList();
-
-            foreach (var volume in LightNovel.Volumes)
-            {
-                volume.Chapters = repository.ReturnAllChapters().Where(chapter => chapter.VolumeId == volume.Id).ToList();
-            }
-
-            foreach (var volume in LightNovel.Volumes)
-            {
-                foreach (var chapter in volume.Chapters)
-                {
-                    chapter.Parts = repository.ReturnAllParts().Where(part => part.ChapterId == chapter.Id).ToList();
-                }
-            }
-
+           
             if (LightNovel == null)
                 return RedirectToPage("/NotFound/TranslationNotFound");
             Volume = LightNovel.Volumes.FirstOrDefault(e => e.Id == volId);

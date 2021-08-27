@@ -7,11 +7,11 @@
 <div class="container m-3">
     <div class="m-3">
         <a asp-page="/Create/CreateVolume" asp-route-id="@Model.LightNovel.Id" class="btn btn-success">Create Volume</a>
-        <a asp-page="/Delete/DeleteVolume" class="btn btn-danger">Delete Volume</a>
+        <a asp-page="/Delete/DeleteVolume" asp-route-id="@Model.LightNovel.Id" class="btn btn-danger">Delete Volume</a>
     </div>
     <div class="m-3">
         <a asp-page="/Create/CreateChapter" asp-route-id="@Model.LightNovel.Id" class="btn btn-success">Create Chapter</a>
-        <a asp-page="/Delete/DeleteChapter" class="btn btn-danger">Delete Chapter</a>
+        <a asp-page="/Delete/DeleteChapter" asp-route-id="@Model.LightNovel.Id" class="btn btn-danger">Delete Chapter</a>
     </div>
     <div class="m-3">
         <a asp-page="/Create/CreatePart" asp-route-id="@Model.LightNovel.Id" class="btn btn-success">Create Part</a>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,15 +17,20 @@ namespace TranslationsBlog.Data
         }
         public List<LightNovel> ReturnAllLightNovels()
         {
-            return dbContext.LightNovels.ToList();
+            return dbContext.LightNovels.Include(e => e.Volumes)
+                                        .ThenInclude(i => i.Chapters)
+                                        .ThenInclude(j => j.Parts)
+                                        .ToList();
         }
         public List<Volume> ReturnAllVolumes()
         {
-            return dbContext.Volumes.ToList();
+            return dbContext.Volumes.Include(e => e.Chapters)
+                                    .ThenInclude(i => i.Parts)
+                                    .ToList();
         }
         public List<Chapter> ReturnAllChapters()
         {
-            return dbContext.Chapters.ToList();
+            return dbContext.Chapters.Include(e => e.Parts).ToList();
         }
         public List<Part> ReturnAllParts()
         {
@@ -60,16 +66,25 @@ namespace TranslationsBlog.Data
         }
         public void DeleteLightNovel(int id)
         {
+            foreach (var volume in ReturnAllLightNovels().FirstOrDefault(e => e.Id == id).Volumes)
+            {
+                foreach (var chapter in volume.Chapters)
+                {
+                    foreach (var part in chapter.Parts)
+                    {
+                        dbContext.Parts.Remove(part);
+                    }
+                    dbContext.Chapters.Remove(chapter);
+                }
+                dbContext.Volumes.Remove(volume);
+            }
             dbContext.LightNovels.Remove(dbContext.LightNovels.FirstOrDefault(e => e.Id == id));
+
             dbContext.SaveChanges();
         }
         public void CreateVolume(Volume volume, LightNovel lightNovel)
         {
-            lightNovel.Volumes = ReturnAllVolumes().Where(e => e.LightNovelId == lightNovel.Id).ToList();
-
             volume.Number = lightNovel.Volumes.Count + 1;
-            volume.LightNovel = lightNovel;
-            volume.LightNovelId = lightNovel.Id;
             volume.Chapters = new List<Chapter>();
 
             lightNovel.Volumes.Add(volume);
@@ -81,12 +96,8 @@ namespace TranslationsBlog.Data
             dbContext.SaveChanges();
         }
         public void CreateChapter(Chapter chapter, Volume volume)
-        {
-            volume.Chapters = ReturnAllChapters().Where(e => e.VolumeId == volume.Id).ToList();
-
+        {           
             chapter.Number = volume.Chapters.Count + 1;
-            chapter.Volume = volume;
-            chapter.VolumeId = volume.Id;
             chapter.Parts = new List<Part>();
 
             volume.Chapters.Add(chapter);
@@ -98,13 +109,9 @@ namespace TranslationsBlog.Data
             dbContext.SaveChanges();
         }
         public void CreatePart(Part part, Chapter chapter)
-        {
-            chapter.Parts = ReturnAllParts().Where(e => e.ChapterId == chapter.Id).ToList();
-
+        {            
             part.Text = "text";
             part.Number = chapter.Parts.Count + 1;
-            part.Chapter = chapter;
-            part.ChapterId = chapter.Id;
 
             chapter.Parts.Add(part);
             dbContext.SaveChanges();

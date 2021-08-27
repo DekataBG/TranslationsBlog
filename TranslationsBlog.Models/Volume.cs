@@ -11,7 +11,5 @@ namespace TranslationsBlog.Models
         public int Id { get; set; }
         public int Number { get; set; }
         public List<Chapter> Chapters { get; set; }
-        public int LightNovelId { get; set; }
-        public LightNovel LightNovel { get; set; }
     }
 }

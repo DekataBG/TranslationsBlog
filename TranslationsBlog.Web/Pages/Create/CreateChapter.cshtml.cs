@@ -22,9 +22,9 @@ namespace TranslationsBlog.Web.Pages.Create
 
         [BindProperty]
         public Volume Volume { get; set; }
-        public void OnGet()
+        public void OnGet(int id)
         {
-            Volumes = repository.ReturnAllVolumes();
+            Volumes = repository.ReturnAllLightNovels().FirstOrDefault(e => e.Id == id).Volumes;
         }
 
         public IActionResult OnPost()

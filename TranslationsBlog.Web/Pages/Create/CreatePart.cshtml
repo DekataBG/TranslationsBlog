@@ -12,7 +12,7 @@
                 <option value="">Please select chapter</option>
                 @foreach (var chapter in Model.Chapters)
                 {
-                    var volNumber = Model.Volumes.FirstOrDefault(e => e.Id == chapter.VolumeId).Number;
+                    var volNumber = Model.VolumeNumber(chapter);
                     <option value="@chapter.Id">Volume @volNumber Chapter @chapter.Number</option>
                 }
             </select>
