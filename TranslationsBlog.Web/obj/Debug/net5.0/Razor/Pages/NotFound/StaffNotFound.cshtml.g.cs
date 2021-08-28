@@ -19,8 +19,15 @@ using TranslationsBlog.Web;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\Pages\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0c4d7a654351655fc6b9ba01ad5278bc9a2ff268", @"/Pages/NotFound/StaffNotFound.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"abd8134dd60c6ac0e1912801d29889c27a491013", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"64df3b18d968f58c2eb3a2f92937302b858506ec", @"/Pages/_ViewImports.cshtml")]
     public class Pages_NotFound_StaffNotFound : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-page", "/Menu/AboutUs", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -58,7 +65,7 @@ using TranslationsBlog.Web;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>The person you are looking for doesnt exist yet.</h1>\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c4d7a654351655fc6b9ba01ad5278bc9a2ff2683968", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c4d7a654351655fc6b9ba01ad5278bc9a2ff2684178", async() => {
                 WriteLiteral("Click here to see all the translators and editors");
             }
             );

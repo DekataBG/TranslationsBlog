@@ -19,8 +19,15 @@ using TranslationsBlog.Web;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\Pages\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"21407caed88d0ceef24e0ec3353593e3c037ae3d", @"/Pages/Create/CreateVolume.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"abd8134dd60c6ac0e1912801d29889c27a491013", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"64df3b18d968f58c2eb3a2f92937302b858506ec", @"/Pages/_ViewImports.cshtml")]
     public class Pages_Create_CreateVolume : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         #pragma warning disable 1998

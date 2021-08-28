@@ -19,8 +19,15 @@ using TranslationsBlog.Web;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\Pages\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0f476b3ed6fc63990366d8bf2cd6203a039d9ff3", @"/Pages/LightNovel/LightNovel.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"abd8134dd60c6ac0e1912801d29889c27a491013", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"64df3b18d968f58c2eb3a2f92937302b858506ec", @"/Pages/_ViewImports.cshtml")]
     public class Pages_LightNovel_LightNovel : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-page", "/Create/CreateVolume", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -64,7 +71,7 @@ using TranslationsBlog.Web;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"container m-3\">\r\n    <div class=\"m-3\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff35891", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff36101", async() => {
                 WriteLiteral("Create Volume");
             }
             );
@@ -96,7 +103,7 @@ using TranslationsBlog.Web;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff38174", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff38384", async() => {
                 WriteLiteral("Delete Volume");
             }
             );
@@ -128,7 +135,7 @@ using TranslationsBlog.Web;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </div>\r\n    <div class=\"m-3\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff310499", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff310709", async() => {
                 WriteLiteral("Create Chapter");
             }
             );
@@ -160,7 +167,7 @@ using TranslationsBlog.Web;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff312786", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff312996", async() => {
                 WriteLiteral("Delete Chapter");
             }
             );
@@ -192,7 +199,7 @@ using TranslationsBlog.Web;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n    </div>\r\n    <div class=\"m-3\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff315114", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff315324", async() => {
                 WriteLiteral("Create Part");
             }
             );
@@ -275,7 +282,7 @@ Write(Model.LightNovel.Title);
 #line hidden
 #nullable disable
             WriteLiteral("                            <ul>\r\n                                <li>\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff319290", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f476b3ed6fc63990366d8bf2cd6203a039d9ff319500", async() => {
                 WriteLiteral("Part ");
 #nullable restore
 #line 39 "C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\Pages\LightNovel\LightNovel.cshtml"

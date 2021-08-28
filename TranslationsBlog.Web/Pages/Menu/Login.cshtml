@@ -1,0 +1,30 @@
+﻿@page
+@model TranslationsBlog.Web.Pages.Menu.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>User Login</h1>
+
+<div class="container">
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <input asp-for="@Model.LoginUser.Username" class="form-control" placeholder="Username" />
+            <span asp-validation-for="@Model.LoginUser.Username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input asp-for="@Model.LoginUser.Password" class="form-control" placeholder="Password" />
+            <span asp-validation-for="@Model.LoginUser.Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <div class="custom-checkbox">
+                <label asp-for="@Model.LoginUser.RememberMe">
+                    <input asp-for="@Model.LoginUser.RememberMe" />
+                    @Html.DisplayNameFor(m => m.LoginUser.RememberMe)
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
