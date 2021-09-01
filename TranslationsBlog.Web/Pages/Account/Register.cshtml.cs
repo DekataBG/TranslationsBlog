@@ -9,6 +9,7 @@ using TranslationsBlog.Models;
 
 namespace TranslationsBlog.Web.Pages.Menu
 {
+
     public class RegisterModel : PageModel
     {
         private readonly UserManager<IdentityUser> userManager;
@@ -28,22 +29,23 @@ namespace TranslationsBlog.Web.Pages.Menu
         public async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)
-            {
-                var user = new IdentityUser { UserName = UnregisteredUser.Username, Email = UnregisteredUser.Email };
+            {                
+                    var user = new IdentityUser { UserName = UnregisteredUser.Username, Email = UnregisteredUser.Email };
 
-                var result = await userManager.CreateAsync(user, UnregisteredUser.Password);
+                    var result = await userManager.CreateAsync(user, UnregisteredUser.Password);
 
-                if (result.Succeeded)
-                {
-                    await signInManager.SignInAsync(user, isPersistent: false);
+                    if (result.Succeeded)
+                    {
+                        await signInManager.SignInAsync(user, isPersistent: false);
 
-                    return RedirectToPage("/Index");
-                }
+                        return RedirectToPage("/Index");
+                    }
 
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError("", error.Description);
-                }
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                
             }
             return Page();
         }

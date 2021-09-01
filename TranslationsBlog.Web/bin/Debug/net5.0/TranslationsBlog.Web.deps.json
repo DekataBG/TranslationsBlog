@@ -1396,6 +1396,10 @@
         }
       },
       "TranslationsBlog.Models/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Identity.Core": "5.0.9",
+          "Microsoft.Extensions.Identity.Stores": "5.0.9"
+        },
         "runtime": {
           "TranslationsBlog.Models.dll": {}
         },

@@ -40,6 +40,7 @@ namespace TranslationsBlog.Web
                     options.Password.RequireNonAlphanumeric = false;
                     options.Password.RequireUppercase = false;
                     options.Password.RequireDigit = false;
+                    options.User.RequireUniqueEmail = true;
                 });
 
             services.AddRazorPages();

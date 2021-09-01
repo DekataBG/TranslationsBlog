@@ -11,7 +11,6 @@ namespace TranslationsBlog.Web.Pages.Menu
     public class LogoutModel : PageModel
     {
         private readonly SignInManager<IdentityUser> signInManager;
-
         public LogoutModel(SignInManager<IdentityUser> signInManager)
         {
             this.signInManager = signInManager;

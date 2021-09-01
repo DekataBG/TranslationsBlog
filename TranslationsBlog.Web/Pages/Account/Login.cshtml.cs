@@ -23,7 +23,7 @@ namespace TranslationsBlog.Web.Pages.Menu
         public void OnGet()
         {
         }
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPost(string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -32,6 +32,10 @@ namespace TranslationsBlog.Web.Pages.Menu
 
                 if (result.Succeeded)
                 {
+                    if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
                     return RedirectToPage("/Index");
                 }
 

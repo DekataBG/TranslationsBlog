@@ -1,0 +1,46 @@
+﻿@page
+@model TranslationsBlog.Web.Pages.Menu.EditUserInRoleModel
+@{
+    ViewData["Title"] = "Edit User With Role";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 text-center">
+            <h2>Add User</h2>
+            <form method="post">
+                <select asp-for="SelectedUser.UserId">
+                    <option value="value">Select User</option>
+                    @foreach (var user in Model.UserNotInRole)
+                    {
+                        <option value="@user.UserId">@user.Username</option>
+                    }
+                </select>
+                <input hidden asp-for="SelectedUser.RoleId" value="@Model.RoleId" />
+                <div class="mt-3">
+                    <button asp-route-command="add"
+                            class="btn btn-success" type="submit">
+                        Add User
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-6 text-center">
+            <h2>Remove User</h2>
+            <form method="post">
+                <select asp-for="SelectedUser.UserId">
+                    <option value="value">Select User</option>
+                    @foreach (var user in Model.UserInRole)
+                    {
+                        <option value="@user.UserId">@user.Username</option>
+                    }
+                </select>
+                <input hidden asp-for="SelectedUser.RoleId" value="@Model.RoleId" />
+                <div class="mt-3">
+                    <button class="btn btn-danger" type="submit">Remove User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="text-center mt-4"><a href='javascript:history.go(-1)' class="btn btn-secondary">Cancel</a></div>
+</div>

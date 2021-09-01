@@ -1,8 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "Rnj08M2IH4X4rT4QjF8yi+pQYhGGM5TUr+GQr0uqt3WwtmecJVpPEkvCOw2KfuJ634X27q27min04yvJw2sXTw==",
+  "dgSpecHash": "CAvoL5WoP1jmJ9KZ1bQAz1MBZS3ukkL8Jg+26ZP+rIQTrL0eiWjrLKElxCdXkbeQqIwIUe7+is+Cx1z7xjvtBQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\bgsga\\source\\repos\\TranslationsBlog\\TranslationsBlog.Models\\TranslationsBlog.Models.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\bgsga\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.9\\microsoft.aspnetcore.cryptography.internal.5.0.9.nupkg.sha512",
+    "C:\\Users\\bgsga\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.9\\microsoft.aspnetcore.cryptography.keyderivation.5.0.9.nupkg.sha512",
+    "C:\\Users\\bgsga\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\bgsga\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\bgsga\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\bgsga\\.nuget\\packages\\microsoft.extensions.identity.core\\5.0.9\\microsoft.extensions.identity.core.5.0.9.nupkg.sha512",
+    "C:\\Users\\bgsga\\.nuget\\packages\\microsoft.extensions.identity.stores\\5.0.9\\microsoft.extensions.identity.stores.5.0.9.nupkg.sha512",
+    "C:\\Users\\bgsga\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\bgsga\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\bgsga\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\bgsga\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

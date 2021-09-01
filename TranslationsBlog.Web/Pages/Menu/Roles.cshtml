@@ -1,0 +1,39 @@
+﻿@page
+@model TranslationsBlog.Web.Pages.Menu.RolesModel
+@{
+    ViewData["Title"] = "Roles";
+}
+
+<h1>Roles</h1>
+
+@if (Model.Roles.Count > 0)
+{
+    <a class="btn btn-primary mb-3" asp-page="/Create/CreateRole">Add New Role</a>
+    foreach (var role in Model.Roles)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                Role Id: @role.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Role Name: @role.Name</h5>  
+            </div>
+            <div class="card-footer">
+                <a asp-page="/Menu/EditRole" asp-route-id="@role.Id" class="btn btn-primary">Edit</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            No roles created yet
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Use the button below to create a role</h5>
+            <a asp-page="/Menu/Roles" class="btn btn-primary">Create Role</a>
+        </div>
+    </div> 
+}

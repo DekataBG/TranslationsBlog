@@ -99,6 +99,13 @@ C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\bin\Debug\net5
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Menu\Register.cshtml.g.cs
-C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Menu\Logout.cshtml.g.cs
-C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Menu\Login.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Account\Login.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Account\Logout.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Account\Register.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Create\CreateRole.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Menu\Roles.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Menu\EditRole.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\NotFound\RoleNotFound.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Create\CreateUserInRole.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Menu\EditUserInRole.cshtml.g.cs
+C:\Users\bgsga\source\repos\TranslationsBlog\TranslationsBlog.Web\obj\Debug\net5.0\Razor\Pages\Delete\DeleteUserInRole.cshtml.g.cs
