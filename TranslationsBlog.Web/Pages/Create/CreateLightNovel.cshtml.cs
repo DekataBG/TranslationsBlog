@@ -10,7 +10,7 @@ using TranslationsBlog.Models;
 
 namespace TranslationsBlog.Web.Pages.Create
 {
-    [Authorize]
+    [Authorize(Roles = "Staff")]
     public class CreateLightNovelModel : PageModel
     {
         private readonly IRepository repository;

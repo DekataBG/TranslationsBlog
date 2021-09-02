@@ -1,13 +1,17 @@
 ﻿@page
+@inject SignInManager<IdentityUser> signInManager
 @model TranslationsPage.Pages.TranslationsModel
 @{
     ViewData["Title"] = "Light Novels";
 }
 
-<div class="container mb-5">
-    <a asp-page="/Create/CreateLightNovel" class="btn btn-success">Create Light Novel</a>
-    <a asp-page="/Delete/DeleteLightNovel" class="btn btn-danger">Delete Light Novel</a>
-</div>
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Staff"))
+{
+    <div class="container mb-5">
+        <a asp-page="/Create/CreateLightNovel" class="btn btn-success">Create Light Novel</a>
+        <a asp-page="/Delete/DeleteLightNovel" class="btn btn-danger">Delete Light Novel</a>
+    </div>
+}
 
 <div class="container">
     <h2>Light Novels</h2>

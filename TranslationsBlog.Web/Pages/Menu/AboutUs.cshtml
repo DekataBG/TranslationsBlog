@@ -1,4 +1,6 @@
 ﻿@page
+@inject SignInManager<IdentityUser> signInManager
+
 @model TranslationsPage.Pages.Menu.AboutUsModel
 @{
     ViewData["Title"] = "About us";
@@ -6,26 +8,30 @@
 
 <h1 class="text-center">About Us</h1>
 
-<div class="container m-3">
-    <div class="m-3">
-        <a class="btn btn-success" asp-page="/Create/CreateTranslator">Create Translator</a>
-        <a class="btn btn-danger" asp-page="/Delete/DeleteTranslator">Delete Translator</a>
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Staff"))
+{
+    <div class="container m-3">
+        <div class="m-3">
+            <a class="btn btn-success" asp-page="/Create/CreateTranslator">Create Translator</a>
+            <a class="btn btn-danger" asp-page="/Delete/DeleteTranslator">Delete Translator</a>
+        </div>
+        <div class="m-3">
+            <a class="btn btn-success" asp-page="/Create/CreateEditor">Create Editor</a>
+            <a class="btn btn-danger" asp-page="/Delete/DeleteEditor">Delete Editor</a>
+        </div>
     </div>
-    <div class="m-3">
-        <a class="btn btn-success" asp-page="/Create/CreateEditor">Create Editor</a>
-        <a class="btn btn-danger" asp-page="/Delete/DeleteEditor">Delete Editor</a>
-    </div>
-</div>
+}
+
 
 <div class="container">
     <h3>Who are we?</h3>
     <p>
-        We are non-profitable organisation with a goal to translate 
+        We are non-profitable organisation with a goal to translate
         light novels of our choice for you. Please <u>do not</u> share them
-        without our permission. 
+        without our permission.
     </p>
     <p>
-        If you have any questions, want to suggest a light novel or to become part of our staff, 
+        If you have any questions, want to suggest a light novel or to become part of our staff,
         please contact us at <i>4241translations@mail.bg</i>
     </p>
 </div>

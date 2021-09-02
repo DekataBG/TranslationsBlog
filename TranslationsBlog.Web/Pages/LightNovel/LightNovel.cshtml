@@ -1,22 +1,26 @@
 ﻿@page
+@inject SignInManager<IdentityUser> signInManager
 @model TranslationsBlog.Web.Pages.LightNovel.LightNovelModel
 @{
     ViewData["Title"] = "Light Novel";
 }
 
-<div class="container m-3">
-    <div class="m-3">
-        <a asp-page="/Create/CreateVolume" asp-route-id="@Model.LightNovel.Id" class="btn btn-success">Create Volume</a>
-        <a asp-page="/Delete/DeleteVolume" asp-route-id="@Model.LightNovel.Id" class="btn btn-danger">Delete Volume</a>
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Staff"))
+{
+    <div class="container m-3">
+        <div class="m-3">
+            <a asp-page="/Create/CreateVolume" asp-route-id="@Model.LightNovel.Id" class="btn btn-success">Create Volume</a>
+            <a asp-page="/Delete/DeleteVolume" asp-route-id="@Model.LightNovel.Id" class="btn btn-danger">Delete Volume</a>
+        </div>
+        <div class="m-3">
+            <a asp-page="/Create/CreateChapter" asp-route-id="@Model.LightNovel.Id" class="btn btn-success">Create Chapter</a>
+            <a asp-page="/Delete/DeleteChapter" asp-route-id="@Model.LightNovel.Id" class="btn btn-danger">Delete Chapter</a>
+        </div>
+        <div class="m-3">
+            <a asp-page="/Create/CreatePart" asp-route-id="@Model.LightNovel.Id" class="btn btn-success">Create Part</a>
+        </div>
     </div>
-    <div class="m-3">
-        <a asp-page="/Create/CreateChapter" asp-route-id="@Model.LightNovel.Id" class="btn btn-success">Create Chapter</a>
-        <a asp-page="/Delete/DeleteChapter" asp-route-id="@Model.LightNovel.Id" class="btn btn-danger">Delete Chapter</a>
-    </div>
-    <div class="m-3">
-        <a asp-page="/Create/CreatePart" asp-route-id="@Model.LightNovel.Id" class="btn btn-success">Create Part</a>
-    </div>
-</div>
+}
 
 <h3>@Model.LightNovel.Title</h3>
 @foreach (var volume in Model.LightNovel.Volumes)

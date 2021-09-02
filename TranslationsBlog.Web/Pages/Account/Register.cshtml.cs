@@ -14,11 +14,14 @@ namespace TranslationsBlog.Web.Pages.Menu
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly RoleManager<IdentityRole> roleManager;
 
-        public RegisterModel(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public RegisterModel(UserManager<IdentityUser> userManager, 
+            SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.roleManager = roleManager;
         }
         [BindProperty]
         public User UnregisteredUser { get; set; }
@@ -30,23 +33,29 @@ namespace TranslationsBlog.Web.Pages.Menu
         {
             if (ModelState.IsValid)
             {                
-                    var user = new IdentityUser { UserName = UnregisteredUser.Username, Email = UnregisteredUser.Email };
+                var user = new IdentityUser { UserName = UnregisteredUser.Username, Email = UnregisteredUser.Email };
 
-                    var result = await userManager.CreateAsync(user, UnregisteredUser.Password);
+                var result = await userManager.CreateAsync(user, UnregisteredUser.Password);
 
-                    if (result.Succeeded)
-                    {
-                        await signInManager.SignInAsync(user, isPersistent: false);
+                if (result.Succeeded)
+                {
+                    await signInManager.SignInAsync(user, isPersistent: false);
+                    //Makes the registered person a user
+                    var roleId = await roleManager.GetRoleIdAsync(await roleManager.FindByNameAsync("User"));
 
-                        return RedirectToPage("/Index");
-                    }
+                    var role = await roleManager.FindByIdAsync(roleId);
 
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError("", error.Description);
-                    }
-                
+                    await userManager.AddToRoleAsync(user, role.Name);
+                    //
+                    return RedirectToPage("/Index");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }                
             }
+            
             return Page();
         }
     }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -9,6 +10,7 @@ using TranslationsBlog.Models;
 
 namespace TranslationsBlog.Web.Pages.Create
 {
+    [Authorize(Roles = "Admin")]
     public class CreateUserInRoleModel : PageModel
     {
         private readonly RoleManager<IdentityRole> roleManager;
@@ -24,6 +26,10 @@ namespace TranslationsBlog.Web.Pages.Create
         {
             var userId = TempData["userId"].ToString();
             var roleId = TempData["roleId"].ToString();
+            if (roleId == "user")
+            {
+                roleId = await roleManager.GetRoleIdAsync(await roleManager.FindByNameAsync("User"));
+            }
 
             var user = await userManager.FindByIdAsync(userId);
             if (user == null)

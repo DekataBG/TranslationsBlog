@@ -1,4 +1,4 @@
-﻿@inject SignInManager<IdentityUser> signInManager;
+﻿@inject SignInManager<IdentityUser> signInManager
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,9 +57,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-page="/Menu/AboutUs">About Us</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-page="/Menu/Roles">Roles</a>
-                        </li>
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="" asp-page="/Menu/Roles">Manage Roles</a>
+                            </li>
+                        }
 
                     </ul>
                 </div>
