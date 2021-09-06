@@ -38,15 +38,13 @@ namespace TranslationsBlog.Web.Pages.Menu
                 var result = await userManager.CreateAsync(user, UnregisteredUser.Password);
 
                 if (result.Succeeded)
-                {
+                {                   
+                    if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        return RedirectToPage("/Menu/AllUsers");
+                    }
                     await signInManager.SignInAsync(user, isPersistent: false);
-                    //Makes the registered person a user
-                    var roleId = await roleManager.GetRoleIdAsync(await roleManager.FindByNameAsync("User"));
-
-                    var role = await roleManager.FindByIdAsync(roleId);
-
-                    await userManager.AddToRoleAsync(user, role.Name);
-                    //
+                    
                     return RedirectToPage("/Index");
                 }
 

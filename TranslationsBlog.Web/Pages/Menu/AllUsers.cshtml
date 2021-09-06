@@ -1,0 +1,30 @@
+﻿@page
+@model TranslationsBlog.Web.Pages.Menu.AllUsersModel
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>All Users</h1>
+<a asp-page="/Account/Register" class="btn btn-primary">Add new user</a>
+
+@if (Model.Users.Count > 0)
+{
+    foreach (var user in Model.Users)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                User Id: @user.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@user.UserName</h5>
+            </div>
+            <div class="card-footer">
+                <form asp-page="/Delete/DeleteUser" asp-route-userId="@user.Id" method="post">
+                    <a asp-page="/Edit/EditUser" asp-route-userId="@user.Id" class="btn  btn-secondary">Edit</a>
+                    <button type="submit" class="btn btn-danger"
+                            onclick="return confirm('Are you sure you want to delete @user.UserName')">Delete</button>
+                </form>
+            </div>
+        </div>
+    }
+}

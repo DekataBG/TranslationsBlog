@@ -38,7 +38,7 @@ namespace TranslationsBlog.Web.Pages.Create
 
                 if (result.Succeeded)
                 {
-                    return RedirectToPage("/Index");
+                    return RedirectToPage("/Menu/Roles");
                 }
 
                 foreach (var error in result.Errors)

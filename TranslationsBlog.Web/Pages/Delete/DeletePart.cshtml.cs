@@ -18,7 +18,10 @@ namespace TranslationsBlog.Web.Pages.Delete
         {
             this.repository = repository;
         }
-        public IActionResult OnGet(int id)
+        public void OnGet()
+        {
+        }
+        public IActionResult OnPost(int id)
         {
             repository.DeletePart(id);
 

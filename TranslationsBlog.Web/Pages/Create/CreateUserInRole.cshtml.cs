@@ -25,11 +25,7 @@ namespace TranslationsBlog.Web.Pages.Create
         public  async Task<IActionResult> OnGet()
         {
             var userId = TempData["userId"].ToString();
-            var roleId = TempData["roleId"].ToString();
-            if (roleId == "user")
-            {
-                roleId = await roleManager.GetRoleIdAsync(await roleManager.FindByNameAsync("User"));
-            }
+            var roleId = TempData["roleId"].ToString();           
 
             var user = await userManager.FindByIdAsync(userId);
             if (user == null)

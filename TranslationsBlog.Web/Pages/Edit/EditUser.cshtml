@@ -1,0 +1,74 @@
+﻿@page
+@model TranslationsBlog.Web.Pages.Edit.EditUserModel
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<h1>Edit User</h1>
+<form method="post" class="mt-3">
+    <div class="form-group row">
+        <label asp-for="@Model.EditUser.Id" class="col-sm-2 col-form-label"></label>
+        <input class="col-sm-10" disabled asp-for="@Model.EditUser.Id" value="@Model.EditUser.Id" />
+    </div>
+    <div class="form-group row">
+        <input class="col-sm-10" hidden asp-for="@Model.EditUser.Id" value="@Model.EditUser.Id" />
+    </div>
+    <div class="form-group row">
+        <label asp-for="@Model.EditUser.Username" class="col-sm-2 col-form-label"></label>
+        <input class="col-sm-10" asp-for="@Model.EditUser.Username" value="@Model.EditUser.Username" />
+    </div>
+    <div class="form-group row">
+        <label asp-for="@Model.EditUser.Email" class="col-sm-2 col-form-label"></label>
+        <input class="col-sm-10" asp-for="@Model.EditUser.Email" value="@Model.EditUser.Email" />
+    </div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a asp-page="/Menu/AllUsers" class="btn btn-secondary">Cancel</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3>User Roles</h3>
+        </div>
+        <div class="card-body">
+            @if (Model.EditUser.Roles.Count > 0)
+            {
+                foreach (var role in Model.EditUser.Roles)
+                {
+                    <h5 class="card-title">@role</h5>
+                }
+            }
+            else
+            {
+                <h5 class="card-title">None at the moment</h5>
+            }
+        </div>
+        <div class="card-footer">
+            <a asp-page="/Edit/EditRoleForUser" asp-route-userId="@Model.EditUser.Id" class="btn btn-primary">Manage Roles</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3>User Claims</h3>
+        </div>
+        <div class="card-body">
+            @if (Model.EditUser.Claims.Count > 0)
+            {
+                foreach (var claim in Model.EditUser.Claims)
+                {
+                    <h5 class="card-title">@claim</h5>
+                }
+            }
+            else
+            {
+                <h5 class="card-title">None at the moment</h5>
+            }
+        </div>
+        <div class="card-footer">
+            <a href="#" class="btn btn-primary">Manage Claims</a>
+        </div>
+    </div>
+
+</form>

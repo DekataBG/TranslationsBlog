@@ -11,6 +11,8 @@ namespace TranslationsBlog.Models
         public string UserId { get; set; }
         public string RoleId { get; set; }
         public string Username { get; set; }
+        public string RoleName { get; set; }
         public bool IsInRole { get; set; }
+        public bool HasUser { get; set; }
     }
 }

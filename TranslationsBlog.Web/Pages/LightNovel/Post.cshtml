@@ -8,8 +8,11 @@
 @if (signInManager.IsSignedIn(User) && User.IsInRole("Staff"))
 {
     <div class="container mb-5">
-        <a asp-page="/LightNovel/EditPart" class="btn btn-secondary" asp-route-id="@Model.Part.Id">Edit</a>
-        <a asp-page="/Delete/DeletePart" class="btn btn-danger" asp-route-id="@Model.Part.Id">Delete</a>
+        <form asp-page="/Delete/DeletePart" asp-route-id="@Model.Part.Id" method="post">
+            <a asp-page="/Edit/EditPart" class="btn btn-secondary" asp-route-id="@Model.Part.Id">Edit</a>
+            <button type="submit" class="btn btn-danger"
+                    onclick="return confirm('Are you sure you want to delete this part')">Delete</button>
+        </form>
     </div>
 }
 
