@@ -31,7 +31,7 @@ namespace TranslationsBlog.Web.Pages.Menu
             if (role==null)
             {
                 TempData["error"] = $"Role with Id = {id} cannot be found";
-                return RedirectToPage("/NotFound/RoleNotFound");
+                return RedirectToPage("/NotFound/IdNotFound");
             }
 
             var model = new EditRole
@@ -58,7 +58,7 @@ namespace TranslationsBlog.Web.Pages.Menu
             if (role == null)
             {
                 TempData["error"] = $"Role with Id = {Role.Id} cannot be found";
-                return RedirectToPage("/NotFound/RoleNotFound");
+                return RedirectToPage("/NotFound/IdNotFound");
             }
             else
             {

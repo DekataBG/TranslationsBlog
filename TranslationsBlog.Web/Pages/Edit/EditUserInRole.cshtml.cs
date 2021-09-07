@@ -40,7 +40,7 @@ namespace TranslationsBlog.Web.Pages.Menu
             if (role == null)
             {
                 TempData["error"] = $"Role with Id = {roleId} cannot be found";
-                return RedirectToPage("/NotFound/RoleNotFound");
+                return RedirectToPage("/NotFound/IdNotFound");
             }
             var model = new List<UserRole>();
 

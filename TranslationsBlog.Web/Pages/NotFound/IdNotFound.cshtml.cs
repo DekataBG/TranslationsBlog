@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace TranslationsBlog.Web.Pages.NotFound
 {
-    public class RoleNotFoundModel : PageModel
+    public class IdNotFoundModel : PageModel
     {
         public void OnGet()
         {

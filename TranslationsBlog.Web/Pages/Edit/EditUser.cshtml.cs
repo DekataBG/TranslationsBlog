@@ -29,7 +29,7 @@ namespace TranslationsBlog.Web.Pages.Edit
             if (user == null)
             {
                 TempData["error"] = $"User with Id = {userId} cannot be found";
-                return RedirectToPage("/NotFound/RoleNotFound");
+                return RedirectToPage("/NotFound/IdNotFound");
             }
 
             var userClaims = await userManager.GetClaimsAsync(user);
@@ -54,7 +54,7 @@ namespace TranslationsBlog.Web.Pages.Edit
             if (user == null)
             {
                 TempData["error"] = $"User with Id = {user.Id} cannot be found";
-                return RedirectToPage("/NotFound/RoleNotFound");
+                return RedirectToPage("/NotFound/IdNotFound");
             }
             else
             {

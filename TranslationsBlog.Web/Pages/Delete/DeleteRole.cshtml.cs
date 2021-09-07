@@ -28,7 +28,7 @@ namespace TranslationsBlog.Web.Pages.Delete
             if (role == null)
             {
                 TempData["error"] = $"Role with Id = {id} cannot be found";
-                return RedirectToPage("/NotFound/RoleNotFound");
+                return RedirectToPage("/NotFound/IdNotFound");
             }
             else
             {
